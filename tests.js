@@ -4,19 +4,23 @@ const expect = chai.expect;
 describe("Colecciones en JS: Array", () => {
     it("Pueden crearse usando [ ]", () => {
 
-        // crea un array "a" usando los corchetes []
-
+        // crea un array "a" usando los corchetes [];
+        let a = [];
         expect(Array.isArray(a)).to.be.true;
     })
     it("Pueden crearse usando new Array", () => {
 
         // crea un array "a" usando el constructor "new"
+        let a = new Array ();
 
         expect(Array.isArray(a)).to.be.true;
     })
     it("Pueden estar vacíos o contener elementos", () => {
 
         // crea un array que esté vacío y otro que no esté vacío
+
+        let emptyArray = [];
+        let nonEmptyArray = ["Sablina", 22];
 
         expect(emptyArray).to.be.empty;
         expect(nonEmptyArray).not.to.be.empty;
@@ -25,24 +29,29 @@ describe("Colecciones en JS: Array", () => {
 
         let list = [10, "foo", true, "pepe"];
 
+
         // completa la definición que falta usando la propiedad length
 
-        expect("???").to.equal(4);
+        expect(list.length).to.equal(4);
     })
     it("Nos permiten acceder a cada elemento del array", () => {
 
         let fruits = ["Piña", "Manzana", "Fresa", "Melón"]
 
         // sustituye "???" en cada caso para acceder al elemento correspondiente de la lista
+    
 
-        expect("???").to.equal("Piña");
-        expect("???").to.equal("Melón");
+        expect(fruits[0]).to.equal("Piña");
+        expect(fruits[fruits.length -1]).to.equal("Melón");
     })
     it("Nos permiten modificar cada elemento", () => {
 
         let fruits = ["Piña", "Manzana", "Fresa", "Melón"]
 
+        fruits[1] = "Pera";
+
         // Añade el código que permite modificar el elemento correspondiente
+
 
         expect(fruits).to.have.same.members(["Piña", "Pera", "Fresa", "Melón"])
     })
@@ -51,6 +60,8 @@ describe("Colecciones en JS: Array", () => {
         let fruits = ["Piña", "Manzana", "Fresa", "Melón"]
 
         // Añade el código que permite modificar la lista (incluyendo un elemento al final)
+
+        fruits.push("Pera");
 
         expect(fruits).to.have.same.members(["Piña", "Manzana", "Fresa", "Melón", "Pera"])
     })
