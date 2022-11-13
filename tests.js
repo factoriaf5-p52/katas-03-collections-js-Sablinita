@@ -160,7 +160,7 @@ describe("Operaciones iterables", () => {
         let list = [1,5,7,9,11,13];
 
         // utiliza la función map para aplicar los números de la lista
-        
+         list = list.map(n => n -1);
         
 
         expect(list).to.have.same.members([0,4,6,8,10,12]);
@@ -171,6 +171,9 @@ describe("Operaciones iterables", () => {
         let list = ["Pikachu", "Charmander", "Magikarp"];
 
         // utiliza la función map para aplicar los números de la lista y guardar la nueva lista en result
+
+        let result = list.map(pokemon => `${pokemon}, te elijo a ti!`);
+      
                 
         expect(result).to.have.same.members([
             "Pikachu, te elijo a ti!",
@@ -197,6 +200,7 @@ describe("Operaciones iterables", () => {
         // puedes utilizar la función .endsWith para comprobar si un string termina por una letra
         // p.ej. "Hola".endsWith('a') devuelve true
        
+        let result = knownExoplanets.filter(exoplanet => exoplanet.endsWith('c'));
 
         // todos los planetas de result terminan con la letra c
         expect(result.every( p => p.endsWith('c'))).to.equal(true);        
